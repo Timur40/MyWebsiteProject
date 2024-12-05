@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload Progress Bar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .progress-wrapper {
+            margin-bottom: 15px;
+            display: none; /* Initially hide the progress bar */
+        }
+
+        progress {
+            width: 100%;
+            height: 20px;
+            border-radius: 5px;
+        }
+
+        .progress-text {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .start-button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .start-button:hover {
+            background-color: #45a049;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>File Upload Progress</h1>
+
+        <!-- Start button -->
+        <button class="start-button" id="start-button">Start Upload</button>
+
+        <!-- Progress bar hidden initially -->
+        <div class="progress-wrapper" id="progress-wrapper">
+            <label for="file-progress">Uploading File...</label>
+            <progress id="file-progress" value="0" max="100"></progress>
+        </div>
+
+        <!-- Text showing current progress -->
+        <div class="progress-text" id="progress-text" style="display: none;">0% Completed</div>
+    </div>
+
+    <script>
+        // Get the elements we need to manipulate
+        let startButton = document.getElementById("start-button");
+        let progressWrapper = document.getElementById("progress-wrapper");
+        let progressBar = document.getElementById("file-progress");
+        let progressText = document.getElementById("progress-text");
+
+        let currentProgress = 0;
+
+        // Function to start the progress bar
+        function startProgress() {
+            // Show the progress bar and text when the upload starts
+            progressWrapper.style.display = "block";
+            progressText.style.display = "block";
+            startButton.style.display = "none"; // Hide the start button
+
+            // Simulate the progress of the upload
+            function updateProgress() {
+                if (currentProgress <= 100) {
+                    progressBar.value = currentProgress;
+                    progressText.textContent = `${currentProgress}% Completed`;
+                    currentProgress += 5; // Increment progress
+                    setTimeout(updateProgress, 500); // Update every 500ms
+                }
+            }
+
+            // Start the progress update
+            updateProgress();
+        }
+
+        // Add event listener to start the upload when button is clicked
+        startButton.addEventListener("click", startProgress);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Schedule D.Timur</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        table {
+            width: 80%;
+            margin: 50px auto;
+            border-collapse: collapse;
+            background-color: #fff;
+        }
+        th, td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #2c3e50;
+            color: white;
+        }
+        td {
+            background-color: #ecf0f1;
+        }
+        .nested-list {
+            text-align: left;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 style="text-align: center; padding: 20px;">Class Schedule</h1>
+
+    <table>
+        <!-- Table Header -->
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+            </tr>
+        </thead>
+
+        <!-- Table Body -->
+        <tbody>
+            <!-- Morning Row -->
+            <tr>
+                <td>утро</td>
+                <td>математика</td>
+                <td>история</td>
+                <td>
+                    <!-- Nested List in Wednesday Morning -->
+                    <ul class="nested-list">
+                        <li>математика</li>
+                        <li></li>
+                    </ul>
+                </td>
+                <td>физика</td>
+                <td>математика</td>
+            </tr>
+            <!-- Afternoon Row -->
+            <tr>
+                <td>день</td>
+                <td>введ спец</td>
+                <td>
+                    <!-- Nested List in Tuesday Afternoon -->
+                    <ul class="nested-list">
+                        <li>физика</li>
+                        <li></li>
+                    </ul>
+                </td>
+                <td>физкультура</td>
+                <td>мировая литература</td>
+                <td>Speak eng</td>
+            </tr>
+            <!-- Evening Row -->
+            <tr>
+                <td>вечер</td>
+                <td>English</td>
+                <td>рус и лит</td>
+                <td>англ</td>
+                <td>Speak eng</td>
+                <td>Speak eng</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
